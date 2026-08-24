@@ -1,0 +1,13 @@
+<div class="container">
+
+  <img [src]="imagenUrl" [alt]="nombreProducto" class="producto-img">
+  
+  <h2>{{ nombreProducto }}</h2>
+
+  <p>Precio: Bs {{ precio }}</p>
+
+  <p>Estado: {{ obtenerEstado() }}</p>
+
+  <p>Stock disponible:
+    {{ stock }} unidades</p>
+</div>
