@@ -7,16 +7,24 @@ import { Component } from '@angular/core';
   styleUrl: './tarjeta-producto.css',
 })
 export class TarjetaProducto {
-nombreProducto: string = 'Laptop Gamer';
+  nombreProducto: string = 'Laptop Gamer';
   precio: number = 4599.90;
-  stock: number = 12;
+  stock: number = 20;
 
-  imagenUrl: string = 'assets/imagen.jpeg';
+  imagenUrl: string = 'assets/imagen2.jpeg';
+
+  get sinStock(): boolean {
+    return this.stock <= 0;
+  }
 
   obtenerEstado(): string {
-    return this.stock > 0
-      ? 'Disponible'
-      : 'Agotado';
+    return this.sinStock ? 'Agotado' : 'Disponible';
+  }
+
+  comprarProducto() {
+    if (this.stock > 0) {
+      this.stock--; 
+    }
   }
 
 }

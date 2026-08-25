@@ -8,6 +8,10 @@
 
   <p>Estado: {{ obtenerEstado() }}</p>
 
-  <p>Stock disponible:
-    {{ stock }} unidades</p>
+  <p>Stock disponible: {{ stock }} unidades</p>
+
+  <button [disabled]="sinStock" (click)="comprarProducto()">
+    {{ sinStock ? 'Agotado' : 'Comprar unidad' }}
+  </button>
+  
 </div>
